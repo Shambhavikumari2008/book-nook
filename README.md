@@ -2,8 +2,9 @@
 
 Mission 2: Design a Simple Website.
 
-**Live website:** _add your GitHub Pages link here after deploying_
-**Repository:** _add your GitHub repo link here_
+**Live website:** https://shambhavikumari2008.github.io/book-nook/
+
+**Repository:** https://github.com/Shambhavikumari2008/book-nook
 
 ## Project Overview
 
