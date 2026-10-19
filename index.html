@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Nook | A small collection of good books</title>
+<meta name="description" content="A small book collection with a short note on each book. Filter by type and mark the ones you have read.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="#top">Book Nook</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" class="nav" aria-label="Main">
+    <a href="#featured">Featured</a>
+    <a href="#books">Books</a>
+    <a href="#habits">Reading habits</a>
+    <span class="saved">Read: <strong id="savedCount">0</strong></span>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <h1>Good books, one shelf.</h1>
+    <p>Book Nook is a small collection of books worth reading, with a line on what each one is about. Filter by type and mark the ones you have finished.</p>
+    <a class="btn" href="#books">Browse the shelf</a>
+  </section>
+
+  <section id="featured" class="block" aria-label="Featured books">
+    <h2>Featured books</h2>
+    <div class="carousel" id="carousel">
+      <div class="slides" id="slides">
+        <article class="slide art-hobbit"><div class="caption"><h3>The Hobbit</h3><p>A fantasy adventure by J. R. R. Tolkien.</p></div></article>
+        <article class="slide art-kalam"><div class="caption"><h3>Wings of Fire</h3><p>An autobiography by A. P. J. Abdul Kalam.</p></div></article>
+        <article class="slide art-pride"><div class="caption"><h3>Pride and Prejudice</h3><p>A classic novel by Jane Austen.</p></div></article>
+        <article class="slide art-habits"><div class="caption"><h3>Atomic Habits</h3><p>A self-improvement book by James Clear.</p></div></article>
+      </div>
+      <div class="controls">
+        <button type="button" id="prev">Previous</button>
+        <div class="dots" id="dots"></div>
+        <button type="button" id="next">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="books" class="block">
+    <h2>The collection</h2>
+    <div class="filters" role="group" aria-label="Filter books">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="fiction" aria-pressed="false">Fiction</button>
+      <button type="button" data-filter="classics" aria-pressed="false">Classics</button>
+      <button type="button" data-filter="nonfiction" aria-pressed="false">Non-fiction</button>
+    </div>
+    <div class="grid">
+      <article class="card" data-cat="classics">
+        <div class="art art-pride"></div>
+        <h3>Pride and Prejudice</h3>
+        <p>By Jane Austen. A sharp, funny story about manners, money and first impressions.</p>
+        <button type="button" class="save" aria-pressed="false">Mark as read</button>
+      </article>
+      <article class="card" data-cat="classics">
+        <div class="art art-malgudi"></div>
+        <h3>Malgudi Days</h3>
+        <p>By R. K. Narayan. Short stories set in the small, made-up town of Malgudi.</p>
+        <button type="button" class="save" aria-pressed="false">Mark as read</button>
+      </article>
+      <article class="card" data-cat="fiction">
+        <div class="art art-hobbit"></div>
+        <h3>The Hobbit</h3>
+        <p>By J. R. R. Tolkien. Bilbo Baggins leaves his quiet home to help a group of dwarves win back their treasure.</p>
+        <button type="button" class="save" aria-pressed="false">Mark as read</button>
+      </article>
+      <article class="card" data-cat="fiction">
+        <div class="art art-alchemist"></div>
+        <h3>The Alchemist</h3>
+        <p>By Paulo Coelho. A shepherd boy travels in search of treasure and learns to follow his dream.</p>
+        <button type="button" class="save" aria-pressed="false">Mark as read</button>
+      </article>
+      <article class="card" data-cat="nonfiction">
+        <div class="art art-kalam"></div>
+        <h3>Wings of Fire</h3>
+        <p>By A. P. J. Abdul Kalam. The life story of the missile and space scientist who became President of India.</p>
+        <button type="button" class="save" aria-pressed="false">Mark as read</button>
+      </article>
+      <article class="card" data-cat="nonfiction">
+        <div class="art art-habits"></div>
+        <h3>Atomic Habits</h3>
+        <p>By James Clear. A practical guide to building good habits through small daily changes.</p>
+        <button type="button" class="save" aria-pressed="false">Mark as read</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="habits" class="block">
+    <h2>Reading habits</h2>
+    <details>
+      <summary>How do I find time to read?</summary>
+      <p>Read for 15 minutes at the same time each day, such as before bed or on the bus. A short daily habit beats a long session once a month.</p>
+    </details>
+    <details>
+      <summary>What if I do not like a book?</summary>
+      <p>Stop. Give a book about 50 pages, and if it still does not work for you, pick another one. Reading should not feel like a chore.</p>
+    </details>
+    <details>
+      <summary>How do I remember what I read?</summary>
+      <p>Write one or two sentences about each book when you finish it. This page works the same way: one short line per book.</p>
+    </details>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Book Nook is a student project. The book descriptions are short summaries written for this page.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

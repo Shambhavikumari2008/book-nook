@@ -1,0 +1,96 @@
+/* To use real photos, replace a gradient below with:
+   background: url("images/hobbit.jpg") center / cover; */
+:root {
+  --ink: #1f1b2e;
+  --sea: #3b2f6b;
+  --sky: #ece9f6;
+  --sun: #f2b705;
+  --paper: #fcfbff;
+  --line: #cfc9e3;
+  --head: "Bricolage Grotesque", system-ui, sans-serif;
+  --body: "Public Sans", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { margin: 0; font: 400 1rem/1.6 var(--body); color: var(--ink); background: var(--paper); }
+h1, h2, h3 { font-family: var(--head); line-height: 1.1; margin: 0; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+  padding: .8rem clamp(1rem, 4vw, 3rem); background: var(--paper); border-bottom: 1px solid var(--line); }
+.logo { font: 800 1.5rem var(--head); text-decoration: none; }
+.nav { display: flex; align-items: center; gap: 1.5rem; }
+.nav a { font-weight: 600; text-decoration: none; }
+.nav a:hover { text-decoration: underline; }
+.saved { padding: .2rem .8rem; background: var(--sky); border-radius: 999px; font-size: .9rem; }
+.menu-btn { display: none; padding: .45rem .9rem; font: 600 1rem var(--body); color: #fff; background: var(--ink); border: 0; border-radius: 4px; cursor: pointer; }
+
+/* Hero */
+.hero { padding: clamp(3rem, 10vw, 7rem) clamp(1rem, 4vw, 3rem); color: #fff; background: var(--sea); }
+.hero h1 { max-width: 12ch; font-size: clamp(2.6rem, 8vw, 6rem); font-weight: 800; }
+.hero p { max-width: 34rem; margin: 1.5rem 0 2rem; font-size: 1.15rem; }
+.hero :focus-visible { outline-color: #fff; }
+.btn { display: inline-block; padding: .8rem 1.4rem; font-weight: 600; color: var(--ink); background: var(--sun); border-radius: 4px; text-decoration: none; }
+.btn:hover { background: #ffd23f; }
+
+/* Sections */
+.block { max-width: 74rem; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 3rem); }
+.block h2 { margin-bottom: 1.25rem; font-size: clamp(1.7rem, 4vw, 2.4rem); }
+
+/* Book cover artwork (gradients stand in for cover images) */
+.art-pride { background: linear-gradient(135deg, #8c2f5b, #e8a9c4 60%, #fbe3ee); }
+.art-malgudi { background: linear-gradient(160deg, #b5651d, #f0c27a 55%, #fdf0d2); }
+.art-hobbit { background: linear-gradient(160deg, #1f5a3a, #7fbf8a 55%, #e7f4c9); }
+.art-alchemist { background: linear-gradient(135deg, #c77d00, #f6d27a 50%, #fff1c2); }
+.art-kalam { background: linear-gradient(160deg, #1b3a6b, #6fa0e0 55%, #e3eefc); }
+.art-habits { background: linear-gradient(160deg, #2b2f3a, #7d8aa6 55%, #e8ecf5); }
+
+/* Carousel */
+.carousel { overflow: hidden; border: 1px solid var(--line); }
+.slides { display: flex; transition: transform .5s ease; }
+.slide { flex: 0 0 100%; display: flex; align-items: flex-end; min-height: 340px; padding: 1.25rem; }
+.caption { max-width: 26rem; padding: .9rem 1.1rem; color: #fff; background: var(--ink); }
+.caption h3 { font-size: 1.6rem; }
+.caption p { margin: .3rem 0 0; }
+.controls { display: flex; justify-content: space-between; align-items: center; padding: .75rem 1rem; background: #fff; }
+.controls > button { padding: .5rem 1rem; font: 600 1rem var(--body); color: #fff; background: var(--ink); border: 0; border-radius: 4px; cursor: pointer; }
+.dots { display: flex; gap: .6rem; }
+.dots button { width: 14px; height: 14px; padding: 0; background: var(--line); border: 0; border-radius: 50%; cursor: pointer; }
+.dots button.active { background: var(--ink); }
+
+/* Filters and cards */
+.filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.5rem; }
+.filters button { padding: .5rem 1.1rem; font: 600 1rem var(--body); color: var(--ink); background: #fff; border: 2px solid var(--ink); border-radius: 4px; cursor: pointer; }
+.filters button[aria-pressed="true"] { color: #fff; background: var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+.card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); }
+.card[hidden] { display: none; }
+.card .art { height: 130px; }
+.card h3 { padding: 1rem 1rem 0; font-size: 1.3rem; }
+.card p { flex: 1; margin: .5rem 1rem 1rem; }
+.save { margin: 0 1rem 1rem; padding: .5rem; font: 600 1rem var(--body); color: var(--ink); background: #fff; border: 2px solid var(--ink); border-radius: 4px; cursor: pointer; }
+.save[aria-pressed="true"] { background: var(--sun); }
+
+/* Tips */
+details { max-width: 44rem; border-top: 1px solid var(--line); padding: .9rem 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { font: 600 1.1rem var(--body); cursor: pointer; }
+details p { margin: .6rem 0 0; }
+
+/* Footer */
+.site-footer { padding: 2rem clamp(1rem, 4vw, 3rem); color: #fff; background: var(--ink); }
+.site-footer p { max-width: 44rem; margin: 0; }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .menu-btn { display: block; }
+  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 1rem;
+    padding: 1rem clamp(1rem, 4vw, 3rem); background: var(--paper); border-bottom: 1px solid var(--line); }
+  .nav.open { display: flex; }
+  .slide { min-height: 260px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .slides { transition: none; }
+}
